@@ -54,7 +54,9 @@ b:Slider("Walkspeed",{
  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
 end)
 
-
+for i, v in next, getconnections(localplayer.Idled) do
+v:Disable();
+end;
 
 while true do
 	wait(0.1)

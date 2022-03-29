@@ -9,7 +9,7 @@ local flag = false
 
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
 
-local w = library:CreateWindow("Bitcoin Miner") -- Creates the window
+local w = library:CreateWindow("Bitcoin Miner V1") -- Creates the window
 
 local c = w:CreateFolder("Farms") -- Creates the folder(U will put here your buttons,etc)
 local h = w:CreateFolder("Auto Gem") -- Creates the folder(U will put here your buttons,etc)

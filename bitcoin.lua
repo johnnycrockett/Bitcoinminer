@@ -54,14 +54,16 @@ b:Slider("Walkspeed",{
  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
 end)
 
-for i, v in next, getconnections(localplayer.Idled) do
-v:Disable();
-end;
-
 while true do
 	wait(0.1)
 	local suc, err = pcall(function()
-        
+	    
+        local VirtualUser=game:service'VirtualUser'
+            game:service'Players'.LocalPlayer.Idled:connect(function()
+            VirtualUser:CaptureController()
+            VirtualUser:ClickButton2(Vector2.new())
+            end)
+    
 		--[[if snow then
 			wait()
 			
@@ -79,18 +81,18 @@ while true do
 			local scrypt = string.match(game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.Scrypt.Rate.Text, '%d%p%d+')
 			local sha = string.match(game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms["SHA-512"].Rate.Text, '%d%p%d+')
 			local bloxchain = string.match(game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.xs.Rate.Text, '%d%p%d+')
-		    game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Position = UDim2.new(.85, 0, .523, 0)
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Codes.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MinStats.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Warp.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.PlotMang.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.FastCard.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Seti.Icon.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Cus.Icon.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.Visible = true
+		    	game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Position = UDim2.new(.85, 0, .523, 0)
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Codes.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MinStats.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Warp.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.PlotMang.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.FastCard.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Seti.Icon.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Cus.Icon.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.Visible = true
             
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Visible = false
 			if dagger > scrypt and dagger > sha and dagger > bloxchain then
 				wait(1)
 				local args = {[1] = 2}

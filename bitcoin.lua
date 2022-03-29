@@ -172,16 +172,19 @@ while true do
 			end
 			while game:GetService("Workspace").GemsSpawned.DataCost > 4 do
 			    if greencheck then
+				    wait(0.2)
 		        	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GemsSpawned.GreenCrystal.Part.CFrame
 		          	    wait(0.4)
 		        	    fireproximityprompt(game:GetService("Workspace").GemsSpawned.GreenCrystal.Part.ProximityPrompt)
 			    end
 	        	if bluecheck then
+				    wait(0.2)		
 		        	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GemsSpawned.BlueCrystal.Part.CFrame
 		        	    wait(0.4)
 		        	    fireproximityprompt(game:GetService("Workspace").GemsSpawned.BlueCrystal.Part.ProximityPrompt)
 	        	end
 	        	if redcheck then
+				    wait(0.2)		
 		        	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GemsSpawned.RedCrystal.Part.CFrame
 		        	    wait(0.4)
 		        	    fireproximityprompt(game:GetService("Workspace").GemsSpawned.RedCrystal.Part.ProximityPrompt)

@@ -81,7 +81,7 @@ while true do
 			local scrypt = string.match(game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.Scrypt.Rate.Text, '%d%p%d+')
 			local sha = string.match(game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms["SHA-512"].Rate.Text, '%d%p%d+')
 			local bloxchain = string.match(game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.xs.Rate.Text, '%d%p%d+')
-		    	game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Position = UDim2.new(.85, 0, .523, 0)
+		   	game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Position = UDim2.new(.85, 0, .523, 0)
             		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Visible = false
             		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Codes.Visible = false
             		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MinStats.Visible = false
@@ -172,21 +172,18 @@ while true do
 			end
 			while game:GetService("Workspace").GemsSpawned.DataCost > 4 do
 			    if greencheck then
-			            wait(0.1)
 		        	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GemsSpawned.GreenCrystal.Part.CFrame
-		          	    wait(0.1)
+		          	    wait(0.4)
 		        	    fireproximityprompt(game:GetService("Workspace").GemsSpawned.GreenCrystal.Part.ProximityPrompt)
 			    end
 	        	if bluecheck then
-		        	    wait(0.1)
 		        	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GemsSpawned.BlueCrystal.Part.CFrame
-		        	    wait(0.1)
+		        	    wait(0.4)
 		        	    fireproximityprompt(game:GetService("Workspace").GemsSpawned.BlueCrystal.Part.ProximityPrompt)
 	        	end
 	        	if redcheck then
-		        	    wait(0.1)
 		        	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GemsSpawned.RedCrystal.Part.CFrame
-		        	    wait(0.1)
+		        	    wait(0.4)
 		        	    fireproximityprompt(game:GetService("Workspace").GemsSpawned.RedCrystal.Part.ProximityPrompt)
 	        	end
 			end

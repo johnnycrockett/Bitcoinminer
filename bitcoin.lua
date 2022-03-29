@@ -9,7 +9,7 @@ local flag = false
 
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
 
-local w = library:CreateWindow("Bitcoin Miner V1.01") -- Creates the window
+local w = library:CreateWindow("Bitcoin Miner v1.07") -- Creates the window
 
 local c = w:CreateFolder("Farms") -- Creates the folder(U will put here your buttons,etc)
 local h = w:CreateFolder("Auto Gem") -- Creates the folder(U will put here your buttons,etc)
@@ -81,18 +81,18 @@ while true do
 			local scrypt = string.match(game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.Scrypt.Rate.Text, '%d%p%d+')
 			local sha = string.match(game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms["SHA-512"].Rate.Text, '%d%p%d+')
 			local bloxchain = string.match(game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.xs.Rate.Text, '%d%p%d+')
-		        game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Position = UDim2.new(.85, 0, .523, 0)
-            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Visible = false
-            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Codes.Visible = false
-            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MinStats.Visible = false
-            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Warp.Visible = false
-            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.PlotMang.Visible = false
-            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.FastCard.Visible = false
-            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Seti.Icon.Visible = false
-            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Cus.Icon.Visible = false
-            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.Visible = true
+		    game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Position = UDim2.new(.85, 0, .523, 0)
+            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Visible = false
+            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Codes.Visible = false
+            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MinStats.Visible = false
+            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Warp.Visible = false
+            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.PlotMang.Visible = false
+            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.FastCard.Visible = false
+            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Seti.Icon.Visible = false
+            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Cus.Icon.Visible = false
+            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.Visible = true
             
-            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Visible = false
+            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Visible = false
 			if dagger > scrypt and dagger > sha and dagger > bloxchain then
 				wait(1)
 				local args = {[1] = 2}
@@ -160,6 +160,7 @@ while true do
 		end
 		
 		if gem then
+		    wait(0.1)
 		    local boardcheck = game:GetService("Players").LocalPlayer.PlayerGui.CrystaliserCountdown.CrystaliserNotReady
 		    local greencheck = game:GetService("Workspace").GemsSpawned:FindFirstChild("GreenCrystal")
 		    local bluecheck = game:GetService("Workspace").GemsSpawned:FindFirstChild("BlueCrystal")
@@ -169,29 +170,25 @@ while true do
 			    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(38, 7, 90)
 		        wait(1)
 			    game:GetService("ReplicatedStorage").Events.PlaceCrystaliser:InvokeServer()
+			    wait(4)
 			end
-			while game:GetService("Workspace").GemsSpawned.DataCost > 4 do
-			    wait(0.1)
+			if game:GetService("Workspace").GemsSpawned.DataCost > 4 then
 			    if greencheck then
-			            wait(0.2)
+			            wait(0.3)
 		        	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GemsSpawned.GreenCrystal.Part.CFrame
-		          	    wait(0.2)
+		          	    wait(0.3)
 		        	    fireproximityprompt(game:GetService("Workspace").GemsSpawned.GreenCrystal.Part.ProximityPrompt)
-			    end
-			    wait(0.1)
-	        	if bluecheck then
-	        	        wait(0.2)
+			    elseif bluecheck then
+	        	        wait(0.3)
 		        	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GemsSpawned.BlueCrystal.Part.CFrame
-		        	    wait(0.2)
+		        	    wait(0.3)
 		        	    fireproximityprompt(game:GetService("Workspace").GemsSpawned.BlueCrystal.Part.ProximityPrompt)
-	        	end
-	        	wait(0.1)
-	        	if redcheck then
-	        	        wait(0.2)
+			    elseif redcheck then
+	        	        wait(0.3)
 		        	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GemsSpawned.RedCrystal.Part.CFrame
-		        	    wait(0.2)
+		        	    wait(0.3)
 		        	    fireproximityprompt(game:GetService("Workspace").GemsSpawned.RedCrystal.Part.ProximityPrompt)
-	        	end
+			    end
 			end
 		end
 		

@@ -9,7 +9,7 @@ local flag = false
 
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
 
-local w = library:CreateWindow("Bitcoin Miner v1.08") -- Creates the window
+local w = library:CreateWindow("Bitcoin Miner v1.10") -- Creates the window
 
 local c = w:CreateFolder("Farms") -- Creates the folder(U will put here your buttons,etc)
 local h = w:CreateFolder("Auto Gem") -- Creates the folder(U will put here your buttons,etc)
@@ -45,6 +45,10 @@ c:Toggle("Auto Mining Boost", function(bool)
     mineboost = bool
 end)
 
+c:Toggle("Multi TS", function(bool)
+    multits = bool
+end)
+
 b:Slider("Walkspeed",{  
 	min = 10; -- min value of the slider
 	max = 200; -- max value of the slider
@@ -74,7 +78,14 @@ while true do
 			fireproximityprompt(game:GetService("Workspace").SnowFlakes.SnowFlake.Part.ProximityPrompt)
 		end
 		--]]
-		
+		  if multits then
+            local timewarp = game:GetService("Players").LocalPlayer.InvenStack:FindFirstChild("15 M Time Warp")
+            if timewarp then
+                wait(0.01)
+                game:GetService("ReplicatedStorage").Events.UseBoost:FireServer("15 M Time Warp")
+                end
+		  end
+        
 		if algo then
 		    local algocheck = game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.AlgNotif
 			local dagger = string.match(game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.Dagger.Rate.Text, '%d%p%d+')
@@ -205,11 +216,11 @@ while true do
                 if mineboostpath.text == "00:01" then
                     wait(1)
                      game:GetService("ReplicatedStorage").Events.CrystalBuy:FireServer("10 min Mining Boost")
-                    wait(1)
+                    wait(1) 
                     game:GetService("ReplicatedStorage").Events.UseBoost:FireServer("10 min Mining Boost")
                 end
             end
-        end
+		  end
 	end)
 	if not suc then
 		warn(err)

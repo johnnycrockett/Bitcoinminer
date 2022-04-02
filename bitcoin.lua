@@ -79,10 +79,10 @@ while true do
 		end
 		--]]
 		  if multits then
-            local timewarp = game:GetService("Players").LocalPlayer.InvenStack:FindFirstChild("15 M Time Warp")
-            if timewarp then
-                wait(0.01)
-                game:GetService("ReplicatedStorage").Events.UseBoost:FireServer("15 M Time Warp")
+            		local timewarp = game:GetService("Players").LocalPlayer.InvenStack:FindFirstChild("15 M Time Warp")
+            		if timewarp then
+               		wait(0.0001)
+                	game:GetService("ReplicatedStorage").Events.UseBoost:FireServer("15 M Time Warp")
                 end
 		  end
         

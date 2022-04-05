@@ -9,7 +9,7 @@ local flag = false
 
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
 
-local w = library:CreateWindow("Bitcoin Miner v1.10") -- Creates the window
+local w = library:CreateWindow("Bitcoin Miner v1.14") -- Creates the window
 
 local c = w:CreateFolder("Farms") -- Creates the folder(U will put here your buttons,etc)
 local h = w:CreateFolder("Auto Gem") -- Creates the folder(U will put here your buttons,etc)
@@ -81,7 +81,6 @@ while true do
 		  if multits then
             		local timewarp = game:GetService("Players").LocalPlayer.InvenStack:FindFirstChild("15 M Time Warp")
             		if timewarp then
-               		wait(0.0001)
                 	game:GetService("ReplicatedStorage").Events.UseBoost:FireServer("15 M Time Warp")
                 end
 		  end
@@ -92,18 +91,18 @@ while true do
 			local scrypt = string.match(game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.Scrypt.Rate.Text, '%d%p%d+')
 			local sha = string.match(game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms["SHA-512"].Rate.Text, '%d%p%d+')
 			local bloxchain = string.match(game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.xs.Rate.Text, '%d%p%d+')
-		    game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Position = UDim2.new(.85, 0, .523, 0)
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Codes.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MinStats.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Warp.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.PlotMang.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.FastCard.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Seti.Icon.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Cus.Icon.Visible = false
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.Visible = true
+		    	game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Position = UDim2.new(.85, 0, .523, 0)
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Codes.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MinStats.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Warp.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.PlotMang.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.FastCard.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Seti.Icon.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Apps.Cus.Icon.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.MiningAlgorithms.Visible = true
             
-            game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Visible = false
+            		game:GetService("Players").LocalPlayer.PlayerGui.Phone.Frame.Visible = false
 			if dagger > scrypt and dagger > sha and dagger > bloxchain then
 				wait(1)
 				local args = {[1] = 2}
@@ -206,18 +205,25 @@ while true do
 		  if mineboost then
             local mineboostpath = game:GetService("Players").LocalPlayer.PlayerGui.Boosts.TextButton.Bs.ct
             local crystalcheck = game:GetService("Players").LocalPlayer.PlayerGui.ActiveMechanic.CrystalShop.CurrencyCounter.Amount.text
+            local clockpath = game:GetService("Players").LocalPlayer.PlayerGui.Energy.Frame.Overclock.Overclock.Lock.AviTitle
             if tonumber(crystalcheck)> 71 then
                 if mineboostpath.text == "00:00" then
-                    wait(1)
-                    game:GetService("ReplicatedStorage").Events.CrystalBuy:FireServer("10 min Mining Boost")
-                    wait(1)
-                    game:GetService("ReplicatedStorage").Events.UseBoost:FireServer("10 min Mining Boost")
+                    wait(0.2)
+                    if clockpath.text == "Active for:" then 
+                        wait(1)
+                        game:GetService("ReplicatedStorage").Events.CrystalBuy:FireServer("10 min Mining Boost")
+                        wait(1)
+                        game:GetService("ReplicatedStorage").Events.UseBoost:FireServer("10 min Mining Boost")
+                    end
                 end
                 if mineboostpath.text == "00:01" then
-                    wait(1)
-                     game:GetService("ReplicatedStorage").Events.CrystalBuy:FireServer("10 min Mining Boost")
-                    wait(1) 
-                    game:GetService("ReplicatedStorage").Events.UseBoost:FireServer("10 min Mining Boost")
+                    wait(0.2)
+                    if clockpath.text == "Active for:" then
+                        wait(1)
+                        game:GetService("ReplicatedStorage").Events.CrystalBuy:FireServer("10 min Mining Boost")
+                        wait(1) 
+                        game:GetService("ReplicatedStorage").Events.UseBoost:FireServer("10 min Mining Boost")
+                    end
                 end
             end
 		  end
